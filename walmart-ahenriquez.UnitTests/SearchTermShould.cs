@@ -21,8 +21,10 @@ namespace walmart_ahenriquez.UnitTests
         [Theory]
         [InlineData("181", true)]
         [InlineData("abba", true)]
+        [InlineData("2332", true)]
         [InlineData("asdf", false)]
         [InlineData("qwerty", false)]
+        [InlineData("1234", false)]
         public void IndicateThatIsPalindromeOrNot(string value, bool expected)
         {
             SearchTerm sut = new SearchTerm(value);

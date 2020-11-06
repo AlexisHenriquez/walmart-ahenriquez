@@ -19,9 +19,9 @@ namespace walmart_ahenriquez.Domain
 
         public int Price { get; set; }
 
-        public int GetPriceWithDiscount(double discountRate)
+        public double GetPriceWithDiscount(double discountRate)
         {
-            return new int();
+            return Math.Round(Price * discountRate);
         }
     }
 }
