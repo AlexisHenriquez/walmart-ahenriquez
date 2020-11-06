@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
 RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.csproj"
 COPY . .
-WORKDIR "/src/walmart-ahenriquez"
+WORKDIR "/src/."
 RUN dotnet build "walmart-ahenriquez/walmart-ahenriquez.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -20,4 +20,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 #ENTRYPOINT ["dotnet", "walmart-ahenriquez/walmart-ahenriquez.dll"]
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez/walmart-ahenriquez.dll
