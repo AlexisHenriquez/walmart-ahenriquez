@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
 RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/walmart-ahenriquez"
 RUN dotnet build "walmart-ahenriquez/walmart-ahenriquez.csproj" -c Release -o /app/build
 
 FROM build AS publish
