@@ -12,5 +12,10 @@ namespace walmart_ahenriquez.Controllers
         {
             return View();
         }
+
+        public IActionResult SearchResults()
+        {
+            return PartialView("Product/_SearchResults");
+        }
     }
 }

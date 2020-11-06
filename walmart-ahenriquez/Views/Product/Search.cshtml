@@ -2,7 +2,20 @@
     ViewData["Title"] = "Search Products";
 }
 
+@section Scripts{ 
+    <script src="~/js/Product/Search.js" asp-append-version="true"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Search Products</h1>
     <p>In this page you can search for products.</p>
+</div>
+<div class="d-table p-4">
+    <div class="d-table-row">
+        <div class="d-table-cell"><input type="text" id="Value" name="Value" class="form-control" /></div>
+        <div class="d-table-cell"><button id="Search" class="btn btn-primary">Search</button></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" id="SearchResults"></div>
 </div>
