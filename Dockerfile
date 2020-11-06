@@ -7,17 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["walmart-ahenriquez.csproj", ""]
-RUN dotnet restore "./walmart-ahenriquez.csproj"
+COPY ["walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
+RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "walmart-ahenriquez.csproj" -c Release -o /app/build
+RUN dotnet build "walmart-ahenriquez/walmart-ahenriquez.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "walmart-ahenriquez.csproj" -c Release -o /app/publish
+RUN dotnet publish "walmart-ahenriquez/walmart-ahenriquez.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-#ENTRYPOINT ["dotnet", "walmart-ahenriquez.dll"]
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.dll
+#ENTRYPOINT ["dotnet", "walmart-ahenriquez/walmart-ahenriquez.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez/walmart-ahenriquez.dll
