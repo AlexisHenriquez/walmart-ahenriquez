@@ -11,8 +11,10 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY ["walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
 RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.csproj"
-COPY . .
+
 WORKDIR "/src/walmart-ahenriquez"
+COPY . .
+
 RUN dotnet build "walmart-ahenriquez.csproj" -c Release -o /app/build
 
 FROM build AS publish
