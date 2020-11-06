@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -7,9 +8,9 @@ namespace walmart_ahenriquez.Domain
 {
     public class Product
     {
-        public string _Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public int Id { get; set; }
+        public int IdProducto { get; set; }
 
         public string Brand { get; set; }
 

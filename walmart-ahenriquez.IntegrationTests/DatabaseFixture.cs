@@ -7,7 +7,7 @@ using walmart_ahenriquez.Infrastructure;
 
 namespace walmart_ahenriquez.IntegrationTests
 {
-    public class DatabaseFixture : IDisposable
+    public class DatabaseFixture
     {
         public DatabaseFixture()
         {
@@ -28,11 +28,5 @@ namespace walmart_ahenriquez.IntegrationTests
 
         public MongoDbContext DbContext { get; }
 
-        public void Dispose()
-        {
-            var client = new MongoClient(this.DbContextSettings.ConnectionString);
-
-            client.DropDatabase(this.DbContextSettings.DatabaseName);
-        }
     }
 }

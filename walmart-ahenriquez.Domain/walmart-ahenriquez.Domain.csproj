@@ -5,4 +5,8 @@
     <RootNamespace>walmart_ahenriquez.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.11.4" />
+  </ItemGroup>
+
 </Project>

@@ -32,9 +32,10 @@ namespace walmart_ahenriquez.Infrastructure
 
         public Product FindById(int id)
         {
+            var filter = Builders<Product>.Filter.Eq(p => p.IdProducto, id);
+
             var product = _context.Products
-                                .AsQueryable()
-                                .Where(p => p.Id == id)
+                                .Find(filter)
                                 .SingleOrDefault();
 
             return product;
