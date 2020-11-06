@@ -9,7 +9,7 @@ EXPOSE 443
 #FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
+COPY ["walmart-ahenriquez/walmart-ahenriquez.csproj", "walmart-ahenriquez/"]
 RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.csproj"
 
 WORKDIR "/src/walmart-ahenriquez"
