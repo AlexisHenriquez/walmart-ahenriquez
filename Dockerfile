@@ -20,4 +20,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 #ENTRYPOINT ["dotnet", "walmart-ahenriquez/walmart-ahenriquez.dll"]
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez/walmart-ahenriquez.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.dll
