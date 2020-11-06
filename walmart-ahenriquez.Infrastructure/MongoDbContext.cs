@@ -26,6 +26,6 @@ namespace walmart_ahenriquez.Infrastructure
             _database = client.GetDatabase(settings.DatabaseName);
         }
 
-        IMongoCollection<Product> Products { get { return _database.GetCollection<Product>("products"); } }
+        public IMongoCollection<Product> Products { get { return _database.GetCollection<Product>("products"); } }
     }
 }

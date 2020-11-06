@@ -9,7 +9,7 @@ namespace walmart_ahenriquez.Domain
     {
         public string _Id { get; set; }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Brand { get; set; }
 
