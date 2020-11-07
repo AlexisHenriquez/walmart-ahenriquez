@@ -21,9 +21,24 @@
 </form>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <input type="text" id="Value" name="Value" class="form-control" />
-            <button id="Search" class="btn btn-secondary">Search</button>
-        </div>
+        @if (!Model.Products.Any())
+        {
+            <div class="col-md-4">
+                <p>There are no products matching your search criteria.</p>
+            </div>
+        }
+        else
+        {
+            foreach (var product in Model.Products)
+            {
+    <div class="col-md-4 card">
+        <img src="https://@product.Image" height="128" width="128" />
+        <p>Brand: @product.Brand</p>
+        <p>Description: @product.Description</p>
+        <p>Original Price: @product.OriginalPrice</p>
+        <p>Price With Discount: @product.PriceWithDiscount</p>
+    </div>
+            }
+        }
     </div>
 </div>

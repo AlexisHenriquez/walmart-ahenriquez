@@ -19,7 +19,7 @@ namespace walmart_ahenriquez.Web.Controllers
 
         public IActionResult Search()
         {
-            return View();
+            return View(new SearchDto());
         }
 
         [HttpPost]

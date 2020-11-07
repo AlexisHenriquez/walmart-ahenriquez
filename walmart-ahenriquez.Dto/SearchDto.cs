@@ -7,6 +7,11 @@ namespace walmart_ahenriquez.Dto
 {
     public class SearchDto
     {
+        public SearchDto()
+        {
+            Products = new List<ProductDto>();
+        }
+
         [Required]
         [MinLength(3)]
         public string Value { get; set; }
