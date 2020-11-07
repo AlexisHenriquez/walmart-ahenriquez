@@ -16,14 +16,32 @@ namespace walmart_ahenriquez.IntegrationTests
             _fixture = fixture;
         }
 
-        [Fact]
-        public void GetProductWithCode5()
+        [Theory]
+        [InlineData(5, "peuoooypt")]
+        [InlineData(8, "sfzkvoñ")]
+        [InlineData(11, "iñmfdpd")]
+        [InlineData(14, "dcc gdodkñg")]
+        [InlineData(17, "cni tñcapdx")]
+        public void GetProductById(int idProducto, string expected)
         {
             IProductRepository sut = new ProductRepository(_fixture.DbContext);
 
-            Product product = sut.FindById(5);
+            Product product = sut.FindById(idProducto);
 
-            Assert.Equal("peuoooypt", product.Brand);
+            Assert.Equal(expected, product.Brand);
+        }
+
+        [Theory]
+        [InlineData("ibs", 8)]
+        [InlineData("cni", 22)]
+        [InlineData("rkh", 20)]
+        public void GetProductsByBrandOrDescription(string brandOrDescription, int expected)
+        {
+            IProductRepository sut = new ProductRepository(_fixture.DbContext);
+
+            IList<Product> products = sut.FindByBrandOrDescription(brandOrDescription);
+
+            Assert.Equal(expected, products.Count);
         }
     }
 }

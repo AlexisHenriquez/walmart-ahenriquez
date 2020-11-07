@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,9 @@ namespace walmart_ahenriquez.Infrastructure
 
         public IList<Product> FindByBrandOrDescription(string brandOrDescription)
         {
-            var values = new List<string>() { brandOrDescription };
-
             var filter = Builders<Product>.Filter.Or(
-                                Builders<Product>.Filter.In(p => p.Brand, values),
-                                Builders<Product>.Filter.In(p => p.Description, values)
+                                Builders<Product>.Filter.Regex(p => p.Brand, new BsonRegularExpression(brandOrDescription, "i")),
+                                Builders<Product>.Filter.Regex(p => p.Description, new BsonRegularExpression(brandOrDescription, "i"))
                             );
 
             return _context.Products
@@ -30,9 +29,9 @@ namespace walmart_ahenriquez.Infrastructure
                         .ToList();
         }
 
-        public Product FindById(int id)
+        public Product FindById(int productId)
         {
-            var filter = Builders<Product>.Filter.Eq(p => p.IdProducto, id);
+            var filter = Builders<Product>.Filter.Eq(p => p.ProductId, productId);
 
             var product = _context.Products
                                 .Find(filter)

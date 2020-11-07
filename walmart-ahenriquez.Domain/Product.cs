@@ -10,7 +10,7 @@ namespace walmart_ahenriquez.Domain
     {
         public ObjectId Id { get; set; }
 
-        public int IdProducto { get; set; }
+        public int ProductId { get; set; }
 
         public string Brand { get; set; }
 
@@ -18,11 +18,11 @@ namespace walmart_ahenriquez.Domain
 
         public string Image { get; set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
 
         public double GetPriceWithDiscount(double discountRate)
         {
-            return Math.Round(Price * discountRate);
+            return Math.Round(Price - (Price * discountRate));
         }
     }
 }

@@ -6,7 +6,7 @@ namespace walmart_ahenriquez.Domain
 {
     public interface IProductRepository
     {
-        Product FindById(int id);
+        Product FindById(int productId);
 
         IList<Product> FindByBrandOrDescription(string brandOrDescription);
     }

@@ -16,7 +16,7 @@ namespace walmart_ahenriquez.Infrastructure
                 cm.AutoMap();
 
                 cm.MapIdMember(p => p.Id);
-                cm.MapMember(p => p.IdProducto).SetElementName("id");
+                cm.MapMember(p => p.ProductId).SetElementName("id");
                 cm.MapMember(p => p.Brand).SetElementName("brand");
                 cm.MapMember(p => p.Description).SetElementName("description");
                 cm.MapMember(p => p.Image).SetElementName("image");
