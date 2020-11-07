@@ -8,17 +8,12 @@ namespace walmart_ahenriquez.Domain
 {
     public class SearchTerm
     {
-        private string _value;
-
         public SearchTerm(string value)
         {
-            _value = value;
+            Value = value;
         }
 
-        public string Value
-        {
-            get { return _value; }
-        }
+        public string Value { get; set; }
 
         public bool IsPalindrome
         {

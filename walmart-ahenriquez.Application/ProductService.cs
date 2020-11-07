@@ -37,6 +37,8 @@ namespace walmart_ahenriquez.Application
             {
                 Product product = _productRepository.FindById(productId);
 
+                searchTerm.Value = productId.ToString();
+
                 if (product != null)
                 {
                     CreateProductDtoAndAddItToList(searchTerm, result, product);
@@ -44,11 +46,14 @@ namespace walmart_ahenriquez.Application
             }
             else
             {
-                IList<Product> products = _productRepository.FindByBrandOrDescription(searchTerm.Value);
-
-                foreach (var product in products)
+                if (searchTerm.Value.Length >= Constants.MinLengthSearchTerm)
                 {
-                    CreateProductDtoAndAddItToList(searchTerm, result, product);
+                    IList<Product> products = _productRepository.FindByBrandOrDescription(searchTerm.Value);
+
+                    foreach (var product in products)
+                    {
+                        CreateProductDtoAndAddItToList(searchTerm, result, product);
+                    }
                 }
             }
 
