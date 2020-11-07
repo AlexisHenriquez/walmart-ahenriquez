@@ -32,25 +32,8 @@ namespace walmart_ahenriquez.Infrastructure
 
         public MongoDbContext()
         {
-            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-
-            var isDevelopment = environment == Environments.Development;
-
-            string currentPath = string.Empty;
-            
-            if (isDevelopment)
-            {
-                currentPath = Directory.GetCurrentDirectory();
-            }
-            else
-            {
-                using var processModule = Process.GetCurrentProcess().MainModule;
-
-                currentPath = Path.GetDirectoryName(processModule?.FileName);
-            }
-            
             var config = new ConfigurationBuilder()
-                .SetBasePath(currentPath)
+                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
 
