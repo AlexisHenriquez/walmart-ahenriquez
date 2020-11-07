@@ -88,6 +88,8 @@ namespace walmart_ahenriquez.IntegrationTests
         [InlineData("crrñ", 14)]
         [InlineData("cni", 0)]
         [InlineData("ikpxo", 13)]
+        [InlineData("1", 1)]
+        [InlineData("12", 1)]
         public void GetProductsByBrandOrDescription(string brandOrDescription, int expected)
         {
             SearchDto searchDto = new SearchDto() { Value = brandOrDescription };
