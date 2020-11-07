@@ -36,7 +36,10 @@ RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY ./walmart-ahenriquez.Web/appSettings.json .
+
+RUN ls
+#COPY ./walmart-ahenriquez.Web/appSettings.json .
+
 COPY --from=publish /app/publish .
 
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.Web.dll
