@@ -13,7 +13,6 @@ namespace walmart_ahenriquez.Dto
         }
 
         [Required]
-        [MinLength(3)]
         public string Value { get; set; }
 
         public IList<ProductDto> Products { get; set; }
