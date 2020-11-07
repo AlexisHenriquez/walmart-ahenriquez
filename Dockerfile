@@ -30,18 +30,14 @@ COPY ./walmart-ahenriquez.Application .
 WORKDIR "/src/walmart-ahenriquez.Web"
 COPY ./walmart-ahenriquez.Web .
 
-COPY ./walmart-ahenriquez.Web/appSettings.json /app
-
-RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
+RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
+RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 
-COPY --from=publish /app/publish .
-
-#COPY --from=publish /app/build/walmart-ahenriquez.Web/bin/Debug/netcoreapp3.1/appSettings.json .
+COPY --from=publish /app .
 
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.Web.dll
