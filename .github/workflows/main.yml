@@ -11,10 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: ls
-    - run: ls walmart-ahenriquez.Web/
-    - run: ls walmart-ahenriquez.IntegrationTests/
-    - run: pwd
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
