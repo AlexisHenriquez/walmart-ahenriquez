@@ -33,7 +33,6 @@ namespace walmart_ahenriquez.Infrastructure
         public MongoDbContext()
         {
             var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
 
