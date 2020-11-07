@@ -1,21 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Search Products";
-}
+﻿@model SearchDto
 
-@section Scripts{ 
-    <script src="~/js/Product/Search.js" asp-append-version="true"></script>
+@{
+    ViewData["Title"] = "Search Products";
 }
 
 <div class="text-center">
     <h1 class="display-4">Search Products</h1>
     <p>In this page you can search for products.</p>
 </div>
-<div class="d-table p-4">
-    <div class="d-table-row">
-        <div class="d-table-cell"><input type="text" id="Value" name="Value" class="form-control" /></div>
-        <div class="d-table-cell"><button id="Search" class="btn btn-primary">Search</button></div>
+<form asp-controller="Product" asp-action="Search" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group p-4">
+        <div class="d-table-cell">
+            <input asp-for="Value" type="text" id="Value" name="Value" class="form-control" />
+        </div>
+        <div class="d-table-cell">
+            <button type="submit" id="Search" class="btn btn-primary">Search</button>
+        </div>
     </div>
-</div>
+</form>
 <div class="container">
-    <div class="row" id="SearchResults"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" id="Value" name="Value" class="form-control" />
+            <button id="Search" class="btn btn-secondary">Search</button>
+        </div>
+    </div>
 </div>

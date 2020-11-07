@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using walmart_ahenriquez.Dto;
 
 namespace walmart_ahenriquez.Web.Controllers
 {
@@ -13,9 +14,15 @@ namespace walmart_ahenriquez.Web.Controllers
             return View();
         }
 
-        public IActionResult SearchResults()
+        [HttpPost]
+        public IActionResult Search(SearchDto searchDto)
         {
-            return PartialView("Product/_SearchResults");
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            return View(searchDto);
         }
     }
 }

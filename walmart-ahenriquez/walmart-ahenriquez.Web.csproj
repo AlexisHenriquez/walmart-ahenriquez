@@ -16,4 +16,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj" />
+  </ItemGroup>
+
 </Project>

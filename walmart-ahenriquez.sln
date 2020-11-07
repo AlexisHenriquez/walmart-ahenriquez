@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Integrat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Infrastructure", "walmart-ahenriquez.Infrastructure\walmart-ahenriquez.Infrastructure.csproj", "{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Dto", "walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj", "{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
