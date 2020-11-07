@@ -40,6 +40,6 @@ WORKDIR /app
 
 COPY --from=publish /app/publish .
 
-COPY --from=publish /app/build/appSettings.json .
+COPY --from=publish /src/walmart-ahenriquez.Web/bin/Release/netcoreapp3.1/appSettings.json .
 
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.Web.dll
