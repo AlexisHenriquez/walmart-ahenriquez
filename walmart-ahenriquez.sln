@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{4BCAD0F9-AEE3-40F1-9DA8-9F4ABB114E97}"
 	ProjectSection(SolutionItems) = preProject
 		Dockerfile = Dockerfile
+		heroku.yml = heroku.yml
 		.github\workflows\main.yml = .github\workflows\main.yml
 	EndProjectSection
 EndProject
@@ -23,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Infrastr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Dto", "walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj", "{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Application", "walmart-ahenriquez.Application\walmart-ahenriquez.Application.csproj", "{FA101689-7948-4392-9221-7F6070B82A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Application", "walmart-ahenriquez.Application\walmart-ahenriquez.Application.csproj", "{FA101689-7948-4392-9221-7F6070B82A89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
