@@ -15,14 +15,14 @@ namespace walmart_ahenriquez.Domain
             _value = value;
         }
 
-        public string GetValue()
+        public string Value
         {
-            return _value;
+            get { return _value; }
         }
 
-        public bool IsPalindrome()
+        public bool IsPalindrome
         {
-            return GetValue().SequenceEqual(GetValue().Reverse());
+            get { return Value.SequenceEqual(Value.Reverse()); }
         }
     }
 }

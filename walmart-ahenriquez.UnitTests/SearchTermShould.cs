@@ -13,7 +13,7 @@ namespace walmart_ahenriquez.UnitTests
         {
             SearchTerm sut = new SearchTerm(value);
 
-            string actual = sut.GetValue();
+            string actual = sut.Value;
 
             Assert.Equal(expected, actual);
         }
@@ -29,7 +29,7 @@ namespace walmart_ahenriquez.UnitTests
         {
             SearchTerm sut = new SearchTerm(value);
 
-            bool actual = sut.IsPalindrome();
+            bool actual = sut.IsPalindrome;
 
             Assert.Equal(expected, actual);
         }

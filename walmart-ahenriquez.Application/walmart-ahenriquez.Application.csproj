@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>walmart_ahenriquez.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\walmart-ahenriquez.Domain\walmart-ahenriquez.Domain.csproj" />
+    <ProjectReference Include="..\walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

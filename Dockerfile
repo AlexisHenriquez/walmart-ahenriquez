@@ -11,7 +11,7 @@ COPY ["walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj", "walmart-ahenrique
 COPY ["walmart-ahenriquez.Domain/walmart-ahenriquez.Domain.csproj", "walmart-ahenriquez.Domain/"]
 COPY ["walmart-ahenriquez.Dto/walmart-ahenriquez.Dto.csproj", "walmart-ahenriquez.Dto/"]
 COPY ["walmart-ahenriquez.Infrastructure/walmart-ahenriquez.Infrastructure.csproj", "walmart-ahenriquez.Infrastructure/"]
-#COPY ["walmart-ahenriquez.Application/walmart-ahenriquez.Application.csproj", "walmart-ahenriquez.Application/"]
+COPY ["walmart-ahenriquez.Application/walmart-ahenriquez.Application.csproj", "walmart-ahenriquez.Application/"]
 RUN dotnet restore "walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj"
 
 WORKDIR "/src/walmart-ahenriquez.Domain"
@@ -23,8 +23,8 @@ COPY ./walmart-ahenriquez.Dto .
 WORKDIR "/src/walmart-ahenriquez.Infrastructure"
 COPY ./walmart-ahenriquez.Infrastructure .
 
-#WORKDIR "/src/walmart-ahenriquez.Application"
-#COPY ./walmart-ahenriquez.Application .
+WORKDIR "/src/walmart-ahenriquez.Application"
+COPY ./walmart-ahenriquez.Application .
 
 WORKDIR "/src/walmart-ahenriquez.Web"
 COPY ./walmart-ahenriquez.Web .

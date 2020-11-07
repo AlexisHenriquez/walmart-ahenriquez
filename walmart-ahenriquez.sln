@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		.github\workflows\main.yml = .github\workflows\main.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Domain", "walmart-ahenriquez.Domain\walmart-ahenriquez.Domain.csproj", "{6A1945B4-7A0D-4837-84A9-7D2145CEB43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Domain", "walmart-ahenriquez.Domain\walmart-ahenriquez.Domain.csproj", "{6A1945B4-7A0D-4837-84A9-7D2145CEB43F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B77877B9-4EDF-46E0-AD33-8D3CC46213C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.UnitTests", "walmart-ahenriquez.UnitTests\walmart-ahenriquez.UnitTests.csproj", "{F6B68C44-4822-43F3-AA8C-99B429859181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.UnitTests", "walmart-ahenriquez.UnitTests\walmart-ahenriquez.UnitTests.csproj", "{F6B68C44-4822-43F3-AA8C-99B429859181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.IntegrationTests", "walmart-ahenriquez.IntegrationTests\walmart-ahenriquez.IntegrationTests.csproj", "{C9F8AD9E-09D5-4AA9-A576-EEEB4D293004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.IntegrationTests", "walmart-ahenriquez.IntegrationTests\walmart-ahenriquez.IntegrationTests.csproj", "{C9F8AD9E-09D5-4AA9-A576-EEEB4D293004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Infrastructure", "walmart-ahenriquez.Infrastructure\walmart-ahenriquez.Infrastructure.csproj", "{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Infrastructure", "walmart-ahenriquez.Infrastructure\walmart-ahenriquez.Infrastructure.csproj", "{F7B299BD-A6C8-46F6-803C-0A5FCC00ECD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Dto", "walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj", "{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "walmart-ahenriquez.Dto", "walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj", "{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "walmart-ahenriquez.Application", "walmart-ahenriquez.Application\walmart-ahenriquez.Application.csproj", "{FA101689-7948-4392-9221-7F6070B82A89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCA3DFB-2EE7-4BEC-81D0-F57D9CC181EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA101689-7948-4392-9221-7F6070B82A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA101689-7948-4392-9221-7F6070B82A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA101689-7948-4392-9221-7F6070B82A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA101689-7948-4392-9221-7F6070B82A89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

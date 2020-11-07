@@ -14,6 +14,8 @@ namespace walmart_ahenriquez.Dto
 
         public string Image { get; set; }
 
-        public double Price { get; set; }
+        public double OriginalPrice { get; set; }
+
+        public double PriceWithDiscount { get; set; }
     }
 }

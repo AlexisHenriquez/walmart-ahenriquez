@@ -22,11 +22,11 @@ namespace walmart_ahenriquez.IntegrationTests
         [InlineData(11, "iñmfdpd")]
         [InlineData(14, "dcc gdodkñg")]
         [InlineData(17, "cni tñcapdx")]
-        public void GetProductById(int idProducto, string expected)
+        public void GetProductById(int productId, string expected)
         {
             IProductRepository sut = new ProductRepository(_fixture.DbContext);
 
-            Product product = sut.FindById(idProducto);
+            Product product = sut.FindById(productId);
 
             Assert.Equal(expected, product.Brand);
         }
