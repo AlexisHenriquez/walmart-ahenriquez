@@ -2,6 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS base
 WORKDIR /app
+COPY ["walmart-ahenriquez.Web/appSettings.json", "."]
 EXPOSE 80
 EXPOSE 443
 
@@ -36,8 +37,6 @@ RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-
-COPY ["walmart-ahenriquez.Web/appSettings.json", "/app"]
 
 COPY --from=publish /app/publish .
 
