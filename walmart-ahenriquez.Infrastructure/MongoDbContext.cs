@@ -1,7 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
+using System.Diagnostics;
+using System.IO;
 using walmart_ahenriquez.Domain;
 
 namespace walmart_ahenriquez.Infrastructure
@@ -29,7 +32,25 @@ namespace walmart_ahenriquez.Infrastructure
 
         public MongoDbContext()
         {
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+            var isDevelopment = environment == Environments.Development;
+
+            string currentPath = string.Empty;
+            
+            if (isDevelopment)
+            {
+                currentPath = Directory.GetCurrentDirectory();
+            }
+            else
+            {
+                using var processModule = Process.GetCurrentProcess().MainModule;
+
+                currentPath = Path.GetDirectoryName(processModule?.FileName);
+            }
+            
             var config = new ConfigurationBuilder()
+                .SetBasePath(currentPath)
                 .AddJsonFile("appSettings.json")
                 .Build();
 
