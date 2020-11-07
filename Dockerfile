@@ -12,7 +12,7 @@ COPY ["walmart-ahenriquez.Domain/walmart-ahenriquez.Domain.csproj", "walmart-ahe
 COPY ["walmart-ahenriquez.Dto/walmart-ahenriquez.Dto.csproj", "walmart-ahenriquez.Dto/"]
 COPY ["walmart-ahenriquez.Infrastructure/walmart-ahenriquez.Infrastructure.csproj", "walmart-ahenriquez.Infrastructure/"]
 COPY ["walmart-ahenriquez.Application/walmart-ahenriquez.Application.csproj", "walmart-ahenriquez.Application/"]
-COPY ["walmart-ahenriquez.Web/appSettings.json", "/app"]
+
 RUN dotnet restore "walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj"
 
 WORKDIR "/src/walmart-ahenriquez.Domain"
@@ -39,5 +39,7 @@ FROM base AS final
 WORKDIR /app
 
 COPY --from=publish /app/publish .
+
+COPY --from=publish /app/build/appSettings.json .
 
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet walmart-ahenriquez.Web.dll
