@@ -30,9 +30,10 @@ COPY ./walmart-ahenriquez.Application .
 WORKDIR "/src/walmart-ahenriquez.Web"
 COPY ./walmart-ahenriquez.Web .
 
-RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
 
 FROM build AS publish
+RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
+
 RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
 
 FROM base AS final
