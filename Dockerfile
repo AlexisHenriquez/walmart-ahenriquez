@@ -30,7 +30,7 @@ WORKDIR "/src/walmart-ahenriquez.Web"
 COPY ./walmart-ahenriquez.Web .
 
 RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
-COPY ["./appSettings.json", "/app"]
+COPY --from=build ["/app/build/appSettings.json", "/app"]
 
 FROM build AS publish
 RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
