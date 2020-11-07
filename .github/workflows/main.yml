@@ -16,7 +16,7 @@ jobs:
       with:
         dotnet-version: 3.1.201
     - name: Tests
-      run: dotnet test --logger trx
+      run: ASPNETCORE_ENVIRONMENT=Development dotnet test --logger trx
     - name: Build and deploy the Docker image
       env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
