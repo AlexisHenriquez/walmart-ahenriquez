@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>walmart_ahenriquez</RootNamespace>
+    <RootNamespace>walmart_ahenriquez.Web</RootNamespace>
     <UserSecretsId>44b0244b-b7b4-4111-a35a-b899b357959f</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>

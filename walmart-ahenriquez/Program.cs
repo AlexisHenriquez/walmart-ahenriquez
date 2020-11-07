@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace walmart_ahenriquez
+namespace walmart_ahenriquez.Web
 {
     public class Program
     {

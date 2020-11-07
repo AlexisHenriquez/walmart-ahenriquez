@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace walmart_ahenriquez.Controllers
+namespace walmart_ahenriquez.Web.Controllers
 {
     public class ProductController : Controller
     {

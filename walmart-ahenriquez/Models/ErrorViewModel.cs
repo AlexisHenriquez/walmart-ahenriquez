@@ -1,6 +1,6 @@
 using System;
 
-namespace walmart_ahenriquez.Models
+namespace walmart_ahenriquez.Web.Models
 {
     public class ErrorViewModel
     {

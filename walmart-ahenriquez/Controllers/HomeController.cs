@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using walmart_ahenriquez.Models;
+using walmart_ahenriquez.Web.Models;
 
-namespace walmart_ahenriquez.Controllers
+namespace walmart_ahenriquez.Web.Controllers
 {
     public class HomeController : Controller
     {
