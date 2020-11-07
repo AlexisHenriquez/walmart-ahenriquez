@@ -9,10 +9,14 @@ EXPOSE 443
 #FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["walmart-ahenriquez/walmart-ahenriquez.Web.csproj", "walmart-ahenriquez/"]
-RUN dotnet restore "walmart-ahenriquez/walmart-ahenriquez.Web.csproj"
+COPY ["walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj", "walmart-ahenriquez.Web/"]
+COPY ["walmart-ahenriquez.Domain/walmart-ahenriquez.Domain.csproj", "walmart-ahenriquez.Domain/"]
+COPY ["walmart-ahenriquez.Dto/walmart-ahenriquez.Dto.csproj", "walmart-ahenriquez.Dto/"]
+COPY ["walmart-ahenriquez.Infrastructure/walmart-ahenriquez.Infrastructure.csproj", "walmart-ahenriquez.Infrastructure/"]
+#COPY ["walmart-ahenriquez.Application/walmart-ahenriquez.Application.csproj", "walmart-ahenriquez.Application/"]
+RUN dotnet restore "walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj"
 
-WORKDIR "/src/walmart-ahenriquez"
+WORKDIR "/src/walmart-ahenriquez.Web"
 COPY ./walmart-ahenriquez .
 
 RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
