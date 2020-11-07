@@ -37,8 +37,7 @@ RUN dotnet publish "walmart-ahenriquez.Web.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 
-RUN ls
-#COPY ./walmart-ahenriquez.Web/appSettings.json .
+COPY ["walmart-ahenriquez.Web/appSettings.json", "/app"]
 
 COPY --from=publish /app/publish .
 
