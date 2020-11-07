@@ -17,7 +17,7 @@ COPY ["walmart-ahenriquez.Infrastructure/walmart-ahenriquez.Infrastructure.cspro
 RUN dotnet restore "walmart-ahenriquez.Web/walmart-ahenriquez.Web.csproj"
 
 WORKDIR "/src/walmart-ahenriquez.Web"
-COPY ./walmart-ahenriquez .
+COPY ./walmart-ahenriquez.Web .
 
 RUN dotnet build "walmart-ahenriquez.Web.csproj" -c Release -o /app/build
 
