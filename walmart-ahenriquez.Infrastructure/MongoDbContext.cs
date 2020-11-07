@@ -51,7 +51,7 @@ namespace walmart_ahenriquez.Infrastructure
             
             var config = new ConfigurationBuilder()
                 .SetBasePath(currentPath)
-                .AddJsonFile("appSettings.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
 
             var client = new MongoClient(config.GetConnectionString("dbConnection"));
