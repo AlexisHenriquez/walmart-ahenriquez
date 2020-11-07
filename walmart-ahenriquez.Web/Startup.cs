@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using walmart_ahenriquez.Application;
+using walmart_ahenriquez.Domain;
+using walmart_ahenriquez.Infrastructure;
 
 namespace walmart_ahenriquez.Web
 {
@@ -23,6 +26,16 @@ namespace walmart_ahenriquez.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IProductDomainService, ProductDomainService>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<MongoDbContext, MongoDbContext>();
+
+            services.AddScoped<IProductService, ProductService>();
+
+            services.AddScoped<ProductFactory, ProductFactory>();
+
             services.AddControllersWithViews();
         }
 

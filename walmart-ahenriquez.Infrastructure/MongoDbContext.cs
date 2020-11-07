@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using Microsoft.Extensions.Configuration;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
 using walmart_ahenriquez.Domain;
@@ -26,11 +27,15 @@ namespace walmart_ahenriquez.Infrastructure
             });
         }
 
-        public MongoDbContext(MongoDbContextSettings settings)
+        public MongoDbContext()
         {
-            var client = new MongoClient(settings.ConnectionString);
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("appSettings.json")
+                .Build();
 
-            _database = client.GetDatabase(settings.DatabaseName);
+            var client = new MongoClient(config.GetConnectionString("dbConnection"));
+
+            _database = client.GetDatabase(config.GetConnectionString("dbName"));
         }
 
         public IMongoCollection<Product> Products { get { return _database.GetCollection<Product>("products"); } }

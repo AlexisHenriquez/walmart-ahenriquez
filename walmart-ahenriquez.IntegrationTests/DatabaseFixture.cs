@@ -11,20 +11,8 @@ namespace walmart_ahenriquez.IntegrationTests
     {
         public DatabaseFixture()
         {
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appSettings.json")
-                .Build();
-
-            string connString = config.GetConnectionString("db");
-
-            string dbName = "walmart-ahenriquez";
-
-            DbContextSettings = new MongoDbContextSettings(connString, dbName);
-
-            DbContext = new MongoDbContext(this.DbContextSettings);
+            DbContext = new MongoDbContext();
         }
-
-        public MongoDbContextSettings DbContextSettings { get; }
 
         public MongoDbContext DbContext { get; }
 

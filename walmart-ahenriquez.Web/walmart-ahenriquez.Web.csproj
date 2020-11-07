@@ -17,7 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\walmart-ahenriquez.Application\walmart-ahenriquez.Application.csproj" />
+    <ProjectReference Include="..\walmart-ahenriquez.Domain\walmart-ahenriquez.Domain.csproj" />
     <ProjectReference Include="..\walmart-ahenriquez.Dto\walmart-ahenriquez.Dto.csproj" />
+    <ProjectReference Include="..\walmart-ahenriquez.Infrastructure\walmart-ahenriquez.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
