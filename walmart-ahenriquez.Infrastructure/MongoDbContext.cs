@@ -33,7 +33,7 @@ namespace walmart_ahenriquez.Infrastructure
         public MongoDbContext()
         {
             var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appSettings.json")
                 .Build();
 
             var client = new MongoClient(config.GetConnectionString("dbConnection"));

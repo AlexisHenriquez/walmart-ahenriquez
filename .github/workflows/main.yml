@@ -15,7 +15,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.201
-    - name: Tests
+    - name: Build .NET Core
+      run: dotnet build
+    - name: Tests .NET Core
       run: dotnet test --logger trx
     - name: Build and deploy the Docker image
       env:
